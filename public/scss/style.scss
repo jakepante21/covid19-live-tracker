@@ -1,0 +1,153 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #384A54;
+	font-family: 'Roboto', sans-serif;
+}
+
+// NAVBAR
+.navbar-custom{
+	background-color: #1E282D;
+	border-bottom: 3px solid black;
+}
+
+.page-container{
+	position: relative;
+	min-height: 100vh;
+}
+
+.main-cont{
+	padding-bottom: 5em;
+}
+
+// GLOBAL - HOME
+.container{
+	margin-top: 1em;
+	border-radius: 0.5em;
+	text-align: center;
+
+	h3, .last-updated{
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-family: 'Montserrat', sans-serif;
+		background-color: #1E282D;
+		padding: 0.3em;
+		box-shadow: 5px 5px black;
+		margin-bottom: 0.5em;
+	}
+
+	small{
+		font-size: 0.6em;
+	}
+
+	.total-cases{
+		span{
+			display: inline-block;
+			color: yellow;
+		}
+	}
+	.total-deaths{
+		span{
+			display: inline-block;
+			color: red;
+		}
+	}
+	.total-recovered{
+		span{
+			display: inline-block;
+			color: skyblue;
+		}
+	}
+
+}
+
+.note{
+	display: block;
+}
+
+.table-responsive{
+	color: white;
+	margin-right: 0;
+	ul{
+		li{
+			a{
+				color: black;
+			}
+		}
+	}
+}
+
+// PER COUNTRIES TABLE
+
+// table{
+// 	border-collapse: collapse;
+
+// 	tbody{
+// 		tr{
+// 			display:block;
+// 		width: 100%;
+// 		overflow: auto;
+// 		height: 50vh;
+// 		}
+// 	}
+
+// 	thead{
+// 		tr{
+// 			display: block;
+// 		}
+// 	}
+// }
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 2em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+// FOOTER
+footer{
+	background-color: #1E282D;
+	border-top: 3px solid black;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1em 0;
+}
+
+// DESKTOP VIEW
+@media only screen and (min-width: 992px){
+	.header-cont{
+		width: 25vw;
+		margin: 0;
+		margin-top: 2em;
+		margin-left: 1em;
+	}
+	.section-cont{
+		width: 70vw;
+		margin: 0;
+		margin-top: 2em;
+	}
+
+	.main-cont{
+		display: flex;
+	}
+}
