@@ -8,7 +8,7 @@ const Header = () =>{
 	let intervalID = null;
 
 	const getData = () =>{
-		// alert("UPDATING DATA.....");
+		alert("UPDATING DATA.....");
 		fetch("https://corona.lmao.ninja/all",{
 			method : "GET"
 		})

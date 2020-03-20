@@ -4,6 +4,8 @@ import { MDBTable, MDBTableBody, MDBTableHead, MDBDataTable } from 'mdbreact';
 
 const Section = () =>{
 
+	let intervalID = null;
+
 	const [countriesData,setCountriesData] = useState([]);
 	const [data,setData] = useState({
 		columns: [
@@ -58,19 +60,28 @@ const Section = () =>{
 		]
 	});
 
-	useEffect( () =>{
+	const getData = () =>{
 		fetch("https://corona.lmao.ninja/countries",{
 			method : "GET"
 		})
 		.then(data => data.json())
 		.then(result => {
 			setCountriesData(result)
+			intervalID = setTimeout(getData.bind(this), 20000);
 		})
+	}
+
+	useEffect( () =>{
+		getData();
 	},[])
 
 	useEffect( () =>{
 		setData({...data,rows : countriesData})
 	},[countriesData])
+
+	useEffect( () => {
+		clearTimeout(intervalID);
+	},[])
 
 	return(
 		<React.Fragment>
