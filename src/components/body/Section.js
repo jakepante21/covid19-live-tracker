@@ -61,13 +61,13 @@ const Section = () =>{
 	});
 
 	const getData = () =>{
-		fetch("https://corona.lmao.ninja/countries",{
+		fetch("https://corona.lmao.ninja/v2/countries?yesterday&sort",{
 			method : "GET"
 		})
 		.then(data => data.json())
 		.then(result => {
-			setCountriesData(result)
-			intervalID = setTimeout(getData.bind(this), 20000);
+			setCountriesData(result);
+			intervalID = setTimeout(getData.bind(this), 60000);
 		})
 	}
 

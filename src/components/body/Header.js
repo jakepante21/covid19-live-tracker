@@ -9,13 +9,14 @@ const Header = () =>{
 
 	const getData = () =>{
 		alert("UPDATING DATA.....");
-		fetch("https://corona.lmao.ninja/all",{
+		fetch("https://corona.lmao.ninja/v2/all?yesterday",{
 			method : "GET"
 		})
 		.then(data => data.json())
 		.then(result => {
+			// console.log(result)
 			setAllCovidData(result)
-			intervalID = setTimeout(getData.bind(this), 20000);
+			intervalID = setTimeout(getData.bind(this), 60000);
 		})
 	}
 
@@ -32,7 +33,7 @@ const Header = () =>{
 			<div className="container header-cont">
 				<div className="last-updated">
 					<small>Last Updated: {Date(allCovidData.updated)}</small>
-					<small className="note">Note: The data will be updated every 20 seconds.</small>
+					<small className="note">Note: The data will be updated every 60 seconds.</small>
 				</div>
 				<h3>Global Count</h3>
 				<h3 className="total-cases">Total Cases <span><i className="fas fa-biohazard"></i> <NumberFormat value={allCovidData.cases} displayType={'text'} thousandSeparator={true} /></span></h3>
